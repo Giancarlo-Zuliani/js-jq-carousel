@@ -1,6 +1,8 @@
-
+//BUTTONS VARIABLES
 var nextBtn = $('.next');
 var prevBtn = $('.prev');
+
+//DOTSNAV ARRAY;
 var dots = $('.nav i');
 
 $(document).ready(function(){
@@ -8,6 +10,7 @@ $(document).ready(function(){
   nextBtn.click(carouselNext);
   prevBtn.click(carouselPrev);
 
+  //KEYBINDING ARROW LEFT AND RIGHT;
   $(document).keydown(function(evt){
     if(evt.keyCode === 37){
       carouselPrev();
@@ -16,8 +19,9 @@ $(document).ready(function(){
       carouselNext();
     }
     evt.preventDefault();
-  })
+  });
 
+  //CLICK ON DOTS EVENT LISTENER AND FUNCTION
   dots.click(function(){
     var activeImg = $('.images .active');
     var activeDot = $('.nav .active');
@@ -27,10 +31,11 @@ $(document).ready(function(){
     var index = dots.index(this);
     var imgArray = $('.images img');
     imgArray[index].classList.add('active');
-  })
+  });
 });
 
 
+//ARROW RIGHT FUNCTION
 function carouselNext(){
   var activeImg = $('.images .active');
   var activeDot = $('.nav .active');
@@ -45,6 +50,7 @@ function carouselNext(){
   }
 };
 
+//ARROW LEFT FUNCTION
 function carouselPrev(){
   var activeImg = $('.images .active');
   var activeDot = $('.nav .active');
