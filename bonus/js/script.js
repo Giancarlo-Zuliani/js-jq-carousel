@@ -2,9 +2,36 @@
 var nextBtn = $('.next');
 var prevBtn = $('.prev');
 
+//DOTSNAV ARRAY;
+var dots = $('.nav i');
+
 $(document).ready(function(){
+
   nextBtn.click(carouselNext);
   prevBtn.click(carouselPrev);
+
+  //KEYBINDING ARROW LEFT AND RIGHT;
+  $(document).keydown(function(evt){
+    if(evt.keyCode === 37){
+      carouselPrev();
+    }
+    else if(evt.keyCode === 39){
+      carouselNext();
+    }
+    evt.preventDefault();
+  });
+
+  //CLICK ON DOTS EVENT LISTENER AND FUNCTION
+  dots.click(function(){
+    var activeImg = $('.images .active');
+    var activeDot = $('.nav .active');
+    activeImg.removeClass('active');
+    activeDot.removeClass('active');
+    this.classList.add('active');
+    var index = dots.index(this);
+    var imgArray = $('.images img');
+    imgArray[index].classList.add('active');
+  });
 });
 
 
