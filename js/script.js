@@ -10,6 +10,15 @@ $(document).ready(function(){
 
 });
 
+$(document).keydown(function(evt){
+  if(evt.keyCode === 37){
+    carouselPrev();
+  }
+  else if(evt.keyCode === 39){
+    carouselNext();
+  }
+  evt.preventDefault();
+})
 function carouselNext(){
   var activeImg = $('.images .active');
   var activeIndex = $('.nav .active')
