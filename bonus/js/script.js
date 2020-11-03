@@ -27,7 +27,7 @@ $(document).ready(function(){
     var activeDot = $('.nav .active');
     activeImg.removeClass('active');
     activeDot.removeClass('active');
-    this.classList.add('active');
+    $(this).addClass('active');
     var index = dots.index(this);
     var imgArray = $('.images img');
     imgArray[index].classList.add('active');
