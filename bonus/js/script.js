@@ -30,7 +30,7 @@ $(document).ready(function(){
     $(this).addClass('active');
     var index = dots.index(this);
     var imgArray = $('.images img');
-    imgArray[index].classList.add('active');
+    $(imgArray[index]).addClass('active');
   });
 });
 
