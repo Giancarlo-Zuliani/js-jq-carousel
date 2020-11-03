@@ -19,6 +19,8 @@ $(document).keydown(function(evt){
   }
   evt.preventDefault();
 })
+
+
 function carouselNext(){
   var activeImg = $('.images .active');
   var activeIndex = $('.nav .active')
